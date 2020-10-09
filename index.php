@@ -4,18 +4,16 @@ require 'connect.php';
 <html>
 	<head>
 		<title>Employee List</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	</head>
-	<body>
-		<table width="50%" cellpadding="2" cellspacing="2" align="center">
-			<tr>
-				<td align="center"><h2>Employee List</h2></td>
-			</tr>
-			<tr>
-				<td><a href="add_employee.php">Add New Employee</a></td>
-			</tr>
-			<tr>
-				<td>
-					<table width="100%" border="1" cellpadding="2" cellspacing="3">
+	<body style="background-color:#93a3e8;">
+		<div class="container" style="background-color:#FFF; margin-top:40px;">
+			<div class="row">
+				<div class="col-md-12">
+					<h2 style="margin-top:20px;">Employee List</h2>
+					<a href="add_employee.php" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Add New Employee</a>
+					<table width="100%" class="table table-hover table-striped table-condensed table-bordered" style="margin-top:20px;">
 						<thead>
 							<tr>	
 								<th>Employee Number</th>
@@ -40,8 +38,8 @@ require 'connect.php';
 								<td><?=$lastname?></td>
 								<td><?=$position?></td>
 								<td align="center">
-									<a href="edit_employee.php?id=<?=$id?>">Edit</a> |
-									<a href="delete_employee.php?id=<?=$id?>" onclick="return confirm('Are you sure you want to delete?')">Delete</a> 
+									<a href="edit_employee.php?id=<?=$id?>" class="btn btn-sm btn-success"><i class="fa fa-edit"></i> Edit</a>
+									<a href="delete_employee.php?id=<?=$id?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete?')"><i class="fa fa-trash"></i> Delete</a> 
 								</td>
 							</tr>
 							<?php } } else {?>
@@ -51,8 +49,10 @@ require 'connect.php';
 							<?php } ?>
 						</tbody>
 					</table>
-				</td>
-			</tr>
-		</table>
+				</div>
+			</div>
+			
+		</div>
+		
 	</body>
 </html>

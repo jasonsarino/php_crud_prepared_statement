@@ -36,42 +36,45 @@ if( isset($_POST['btnSubmit']) ) {
 <html>
 	<head>
 		<title>Add New Employee</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	</head>
 	<body>
-		<table width="50%" cellpadding="2" cellspacing="2" align="center">
+		<table width="70%" cellpadding="2" cellspacing="2" align="center" style="margin-top:20px;">
 			<tr>
 				<td align="center"><h2>Add New Employee</h2></td>
-			</tr>
-			<tr>
-				<td align="center"><a href="index.php">Back to employee list</a></td>
 			</tr>
 			<tr>
 				<td>
 					<?php 
 					if( isset( $alert_message ) AND !empty( $alert_message )) {
-						echo "<center>".$alert_message."</center>";
+						echo "<div class='alert alert-success'>".$alert_message."</div>";
 					}
 					?>
 					<form method="post">
 						<table width="60%" cellpadding="5" cellspacing="5" align="center">
 						<tr>
 							<td style="width:30%">Employee Number:</td>
-							<td><input type="text" name="employee_number" style="width:100%;" placeholder="Enter Employee Number"></td>
+							<td><input required type="text" class="form-control" name="employee_number" style="width:100%;" placeholder="Enter Employee Number"></td>
 						</tr>
 						<tr>
 							<td style="width:30%">First Name:</td>
-							<td><input type="text" name="firstname" style="width:100%;" placeholder="Enter First Name"></td>
+							<td><input required type="text" class="form-control" name="firstname" style="width:100%;" placeholder="Enter First Name"></td>
 						</tr>
 						<tr>
 							<td style="width:30%">Last Name:</td>
-							<td><input type="text" name="lastname" style="width:100%;" placeholder="Enter Last Name"></td>
+							<td><input required type="text" class="form-control" name="lastname" style="width:100%;" placeholder="Enter Last Name"></td>
 						</tr>
 						<tr>
 							<td style="width:30%">Position:</td>
-							<td><input type="text" name="position" style="width:100%;" placeholder="Enter Position"></td>
+							<td><input required type="text" class="form-control" name="position" style="width:100%;" placeholder="Enter Position"></td>
 						</tr>
 						<tr>
-							<td colspan="2" align="center"><button type="submit" name="btnSubmit">Submit</button></td>
+							<td></td>
+							<td>
+								<button type="submit" name="btnSubmit" class="btn btn-primary">Submit</button>
+								<a href="index.php" class="btn btn-info">Back to employee list</a>
+							</td>
 						</tr>
 						</table>
 					</form>

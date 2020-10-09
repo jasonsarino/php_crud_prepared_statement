@@ -33,20 +33,19 @@ if( isset($_POST['btnSubmit']) ) {
 <html>
 	<head>
 		<title>Edit Employee</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	</head>
 	<body>
-		<table width="50%" cellpadding="2" cellspacing="2" align="center">
+		<table width="70%" cellpadding="2" cellspacing="2" align="center" style="margin-top:20px;">
 			<tr>
 				<td align="center"><h2>Edit Employee</h2></td>
-			</tr>
-			<tr>
-				<td align="center"><a href="index.php">Back to employee list</a></td>
 			</tr>
 			<tr>
 				<td>
 					<?php 
 					if( isset( $alert_message ) AND !empty( $alert_message )) {
-						echo "<center>".$alert_message."</center>";
+						echo "<div class='alert alert-success'>".$alert_message."</div>";
 					}
 					?>
 
@@ -64,22 +63,26 @@ if( isset($_POST['btnSubmit']) ) {
 						<table width="60%" cellpadding="5" cellspacing="5" align="center">
 						<tr>
 							<td style="width:30%">Employee Number:</td>
-							<td><input type="text" name="employee_number" style="width:100%;" placeholder="Enter Employee Number" value="<?=$employee_number?>"></td>
+							<td><input required class="form-control" type="text" name="employee_number" style="width:100%;" placeholder="Enter Employee Number" value="<?=$employee_number?>"></td>
 						</tr>
 						<tr>
 							<td style="width:30%">First Name:</td>
-							<td><input type="text" name="firstname" style="width:100%;" placeholder="Enter First Name" value="<?=$firstname?>"></td>
+							<td><input required class="form-control" type="text" name="firstname" style="width:100%;" placeholder="Enter First Name" value="<?=$firstname?>"></td>
 						</tr>
 						<tr>
 							<td style="width:30%">Last Name:</td>
-							<td><input type="text" name="lastname" style="width:100%;" placeholder="Enter Last Name" value="<?=$lastname?>"></td>
+							<td><input required class="form-control" type="text" name="lastname" style="width:100%;" placeholder="Enter Last Name" value="<?=$lastname?>"></td>
 						</tr>
 						<tr>
 							<td style="width:30%">Position:</td>
-							<td><input type="text" name="position" style="width:100%;" placeholder="Enter Position" value="<?=$position?>"></td>
+							<td><input required class="form-control" type="text" name="position" style="width:100%;" placeholder="Enter Position" value="<?=$position?>"></td>
 						</tr>
 						<tr>
-							<td colspan="2" align="center"><button type="submit" name="btnSubmit">Submit</button></td>
+							<td></td>
+							<td>
+								<button type="submit" name="btnSubmit" class="btn btn-primary">Submit</button>
+								<a href="index.php" class="btn btn-info">Back to employee list</a>
+							</td>
 						</tr>
 						</table>
 					</form>
